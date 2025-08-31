@@ -10,5 +10,5 @@ app.use(userRouter);
 await connectDb();
 app.use('/api',userRouter);
 app.listen(8082,()=>{
-    console.log(`Server listening at 8082`);
+    console.log(`Server listening at port: 8082`);
 })
