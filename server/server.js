@@ -14,5 +14,5 @@ app.use(cors());
 await connectDb();
 app.use('/api',userRouter);
 app.listen(8082,()=>{
-    console.log(`Server listening at 8082`);
+    console.info(`Server listening at 8082`);
 })
