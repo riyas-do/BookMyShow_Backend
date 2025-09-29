@@ -1,12 +1,12 @@
 import express from 'express';
 const userRouter =  express.Router();
-import {createUser, getallUsers, login} from '../Controllers/userController.js';
+import {createUser, getallUsers,getUserData, login} from '../Controllers/userController.js';
 
 
 userRouter.route('/user')
-    .get(getallUsers)
-    .post(createUser)
+    .get(getUserData)
     
+userRouter.route('/register').post(createUser)
 userRouter.post('/login', login)
 
 // userRouter.route('/user/:id')
