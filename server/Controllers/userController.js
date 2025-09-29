@@ -62,6 +62,9 @@ export async function getallUsers(req, res){
 }
 
 export async function getUserData(req, res){
-    const userId = req.params;
-    res.status(200).send('user found');
+     const { userId } = req;
+    const user = await userModel.findOne({_id: userId}).select('-password');
+    res.status(200).send({
+        user
+    });
 }
